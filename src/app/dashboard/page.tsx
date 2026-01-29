@@ -1,25 +1,27 @@
 "use client";
 
-import { clearAll, getUserID, getAccCreated } from "@/utils/storage";
-import { useRouter } from "next/navigation";
+import DashboardHeader from "@/src/components/dashboard/DashboardHeader";
+import LogoutButton from "@/src/components/dashboard/LogoutButton";
+import StatCard from "@/src/components/dashboard/StatCard";
+import UserCard from "@/src/components/dashboard/UserCard";
+import { getUserID, getAccCreated } from "@/src/utils/storage";
 
 export default function Dashboard() {
-  const router = useRouter();
+  const userID = getUserID();
+  const acc = getAccCreated();
 
   return (
-    <div>
-      <p>UserID: {getUserID()}</p>
-      <p>Role: Manager</p>
-      <p>accCreated: {getAccCreated()}</p>
+    <div className="min-h-screen bg-gray-100 p-4">
+      <DashboardHeader />
 
-      <button
-        onClick={() => {
-          clearAll();
-          router.replace("/login");
-        }}
-      >
-        Logout
-      </button>
+      <UserCard userID={userID} accCreated={acc} />
+
+      <div className="grid grid-cols-2 gap-4 mt-4">
+        <StatCard title="Role" value="Manager" />
+        <StatCard title="Profile" value={acc === "1" ? "Complete" : "Pending"} />
+      </div>
+
+      <LogoutButton />
     </div>
   );
 }

@@ -16,5 +16,7 @@ export default function Splash() {
     else router.replace("/dashboard");
   }, []);
 
-  return <p>Loading...</p>;
+  return <div className=" flex h-screen justify-center items-center">
+    <p>Loading...</p>
+  </div>;
 }
