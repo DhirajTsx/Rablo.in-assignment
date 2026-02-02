@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Assignment v0.0
 
-## Getting Started
+responsive Next.js web application built for the Frontend Assignment. This application handles Google Social Login (simulated), Profile Synchronization, deterministic Routing, and Dashboard management with a focus on clean architecture and strict type safety.
 
-First, run the development server:
+## Live Demo & Repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Live Demo:** [https://rablo-in-assignment-ten.vercel.app/login]
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (v4)
+- **State Management:** React Context API (`AuthContext`)
+- **API Handling:** Native `fetch` with Next.js Rewrites (Proxy)
+- **Icons:** SVG / Lucide React
+
+---
+
+## Setup & Installation
+
+### 1. Clone the repository
+
+```
+git clone <your-repo-url>
+cd manager-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###  2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install / pnpm install
+# or
+yarn install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+### 3. Configuration (Crucial for CORS)
 
-To learn more about Next.js, take a look at the following resources:
+Ensure next.config.ts is configured to handle the backend proxy and external images:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+// next.config.ts
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "**.googleusercontent.com" },
+      { protocol: "https", hostname: "ui-avatars.com" },
+    ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/api/proxy/:path*",
+        destination: "[http://13.50.118.141:6500/:path](http://13.50.118.141:6500/:path)*", // Backend URL
+      },
+    ];
+  },
+};
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the Development Server
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+npm run dev 
+or
+pnpm run dev 
+```
+- Open http://localhost:3000 with your browser.
