@@ -83,7 +83,7 @@ cd manager-app
 ### 2. .env.local setup 
 
 ```
-NEXT_PUBLIC_API_URL=http://13.50.118.141:6500
+NEXT_PUBLIC_API_URL= your URl 
 ```
 
 
