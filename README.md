@@ -80,7 +80,14 @@ git clone <your-repo-url>
 cd manager-app
 ```
 
-###  2. Install Dependencies
+### 2. .env.local setup 
+
+```
+NEXT_PUBLIC_API_URL=http://13.50.118.141:6500
+```
+
+
+###  3. Install Dependencies
 
 ```
 npm install / pnpm install
@@ -89,7 +96,7 @@ yarn install
 
 ```
 
-### 3. Configuration (Crucial for CORS)
+### 4. Configuration (Crucial for CORS)
 
 Ensure next.config.ts is configured to handle the backend proxy and external images:
 
@@ -113,11 +120,10 @@ const nextConfig = {
 };
 ```
 
-### 4. Run the Development Server
+### 5. Run the Development Server
 
 ```
 npm run dev 
 or
 pnpm run dev 
 ```
-- Open http://localhost:3000 with your browser.
