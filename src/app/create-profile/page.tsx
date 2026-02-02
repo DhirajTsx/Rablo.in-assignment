@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { api } from "@/lib/api";
+import { api } from "@/api/api";
 import { useRouter } from "next/navigation";
 
 export default function CreateProfile() {

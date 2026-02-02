@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
-import { api } from "@/lib/api";
-import { ManagerProfile } from "@/lib/types";
+import { api } from "@/api/api";
+import { ManagerProfile } from "@/types/types";
 
 //components
 import Spinner from "@/components/ui/Spinner";

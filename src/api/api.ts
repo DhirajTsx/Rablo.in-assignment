@@ -1,5 +1,5 @@
 // src/lib/api.ts
-import { ManagerProfile, ApiResponse, PatchProfileData } from "./types";
+import { ManagerProfile, ApiResponse, PatchProfileData } from "../types/types";
 
 const BASE_URL = "/api/proxy"; 
 

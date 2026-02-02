@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ManagerProfile } from "@/lib/types";
+import { ManagerProfile } from "@/types/types";
 
 export default function ProfileHeader({
   profile,
