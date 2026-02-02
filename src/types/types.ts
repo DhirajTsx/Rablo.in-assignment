@@ -1,5 +1,3 @@
-// src/lib/types.ts
-
 export interface ManagerLocation {
   mapLocation: number[];
   city: string;
@@ -26,19 +24,17 @@ export interface ManagerProfile {
   role: string;
   location: ManagerLocation;
   accCreated: number;
-  language: string[]; // Array of strings
+  language: string[]; 
   access_token: AccessToken;
   kyc_verification_url: string;
 }
 
-// API Wrapper
 export interface ApiResponse {
   success: boolean;
   message: string;
   data: ManagerProfile;
 }
 
-// Patch Data
 export interface PatchProfileData {
   contactNumber: string;
   gender: string;

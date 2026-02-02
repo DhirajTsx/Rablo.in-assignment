@@ -3,8 +3,6 @@ import SocialButton from "@/components/login/SocialButton";
 export default function SocialCard({ onGoogle }: { onGoogle: () => void }) {
   return (
     <div className="absolute inset-0 flex items-end justify-center pb-6 z-10">
-
-      {/* Glass Card */}
       <div className="w-[92%] rounded-2xl bg-[#2e7c90]/40 backdrop-blur-xl px-5 py-8">
 
         <h2 className="text-center text-[32px] italic font-bold text-white">

@@ -1,4 +1,3 @@
-// src/lib/api.ts
 import { ManagerProfile, ApiResponse, PatchProfileData } from "../types/types";
 
 const BASE_URL = "/api/proxy"; 
@@ -16,7 +15,6 @@ export const api = {
       
       const json: ApiResponse = await res.json();
       
-      // FIX: Hum sirf andar ka 'data' object return karenge
       return json.data; 
       
     } catch (error) {
