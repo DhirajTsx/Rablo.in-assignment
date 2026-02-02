@@ -18,6 +18,58 @@ responsive Next.js web application built for the Frontend Assignment. This appli
 - **Icons:** SVG / Lucide React
 
 ---
+## folder Structure 
+
+```
+MY-ASSIGNMENT/
+│
+├── src/
+│   │
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── login/              # Login screen (Figma based)
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── create-profile/     # Basic profile creation flow
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── dashboard/          # Manager dashboard
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── manager/            # OAuth redirect handler (?userID=)
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── layout.tsx          # Root layout
+│   │   ├── page.tsx            # Splash routing logic
+│   │   └── globals.css
+│   │
+│   ├── api/                    # API abstraction layer
+│   │   ├── auth.ts             # Google login helpers
+│   │   └── profile.ts          # GET / PATCH profile services
+│   │
+│   ├── components/             # Reusable UI components
+│   │   ├── login/
+│   │   │   ├── SocialButton.tsx
+│   │   │   └── SocialCard.tsx
+│   │   │
+│   │   ├── dashboard/
+│   │   │   ├── InfoSection.tsx
+│   │   │   └── ProfileHeader.tsx
+│   │   │
+│   │   └── ui/
+│   │       ├── InfoRow.tsx
+│   │       └── Spinner.tsx
+│   │
+│   ├── context/
+│   │   └── AuthContext.tsx     # Auth + localStorage state management
+│   │
+│   └── types/
+│       └── types.ts            # Shared TypeScript types
+│ 
+│ 
+```
+
+
+---
 
 ## Setup & Installation
 
